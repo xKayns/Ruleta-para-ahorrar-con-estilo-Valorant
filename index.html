@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruleta de Ahorro 365 Días - Estilo Valorant</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Valorant', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #0e0e10;
+            color: white;
+            background-image: radial-gradient(circle at top left, #2c2c34, #0e0e10);
+            animation: backgroundGlow 5s infinite alternate;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            text-align: center; /* Centra el texto en el body */
+        }
+
+        h1 {
+            color: #ff4655;
+            font-size: 12vh;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(255, 70, 85, 0.6);
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            padding: 2vh 5vh;
+            font-size: 3vh;
+            background-color: #ff4655;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.4s, transform 0.4s;
+            box-shadow: 0 4px 8px rgba(255, 70, 85, 0.4), 0 0 20px rgba(255, 70, 85, 0.5);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 10px; /* Espaciado entre botones */
+        }
+
+        button:hover {
+            background-color: #ff6370;
+            transform: scale(1.1);
+        }
+
+        #resultado {
+            font-size: 6vh;
+            font-weight: bold;
+            color: #00e6e6;
+            text-shadow: 2px 2px 20px rgba(0, 230, 230, 0.8), 0 0 40px rgba(0, 230, 230, 1);
+            margin-top: 20px;
+            text-align: center; /* Asegura que el texto dentro del div se centre */
+        }
+
+        /* Contador de los días restantes */
+        #contador {
+            margin-top: 20px;
+            font-size: 4vh;
+            color: #ff4655;
+        }
+
+        /* Contador del total ahorrado */
+        #totalAhorrado {
+            font-size: 4vh;
+            color: #00e6e6;
+            margin-top: 20px;
+            text-shadow: 2px 2px 20px rgba(0, 230, 230, 0.8), 0 0 40px rgba(0, 230, 230, 1);
+        }
+
+        /* Estilo para las imágenes de las armas */
+        .weapon {
+            position: absolute;
+            width: 18vw; /* Tamaño de las armas */
+            opacity: 0.8;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .weapon:hover {
+            transform: scale(1.2) rotate(10deg); /* Modificador de tamaño al hacer hover */
+            opacity: 1;
+        }
+
+        .weapon.top-left {
+            top: 10vh; /* Ajustado */
+            left: 10vh; /* Ajustado */
+        }
+
+        .weapon.top-right {
+            top: 10vh; /* Ajustado */
+            right: 10vh; /* Ajustado */
+        }
+
+        .weapon.bottom-left {
+            bottom: 10vh; /* Ajustado */
+            left: 10vh; /* Ajustado */
+        }
+
+        .weapon.bottom-right {
+            bottom: 10vh; /* Ajustado */
+            right: 10vh; /* Ajustado */
+        }
+
+        @keyframes backgroundGlow {
+            0% { background-image: radial-gradient(circle at top left, #2c2c34, #0e0e10); }
+            100% { background-image: radial-gradient(circle at bottom right, #2c2c34, #18181b); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Ruleta de Ahorro 365 Días</h1>
+    <p>Gira la ruleta para descubrir cuánto ahorrarás hoy:</p>
+
+    <!-- Aquí se mostrará el resultado -->
+    <div id="resultado"></div>
+
+    <!-- Botón para girar la ruleta -->
+    <button id="botonGirar" onclick="girarRuleta()">Girar Ruleta</button>
+
+    <!-- Botón para reiniciar el ahorro -->
+    <button id="botonReiniciar" onclick="reiniciarAhorro()">Reiniciar Ahorro</button>
+
+    <!-- Contador regresivo de los días restantes -->
+    <div id="contador"></div>
+
+    <!-- Contador del total ahorrado -->
+    <div id="totalAhorrado"></div>
+
+    <!-- Imágenes de las armas -->
+    <img src="https://i.imgur.com/sSQdwzR.png" alt="Vandal" class="weapon top-left">
+    <img src="https://i.imgur.com/Cp7CHCv.png" alt="Phantom" class="weapon top-right">
+    <img src="https://i.imgur.com/z5pDoSX.png" alt="Operator" class="weapon bottom-left">
+    <img src="https://i.imgur.com/QMTd2sl.png" alt="Sheriff" class="weapon bottom-right">
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
