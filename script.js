@@ -5,6 +5,20 @@ let totalAhorrado = localStorage.getItem('totalAhorrado') ? parseFloat(localStor
 // Array con los números del 1 al 365
 const numerosRestantes = [...Array(365).keys()].map(x => x + 1);
 
+// Función para reproducir el sonido de ganar
+function reproducirSonidoGanar() {
+    const ganarSonido = document.getElementById('ganarSonido');
+    ganarSonido.currentTime = 0; // Reinicia el sonido si se está reproduciendo
+    ganarSonido.play(); // Reproduce el sonido
+}
+
+// Función para reproducir el sonido de fin
+function reproducirSonidoFin() {
+    const finSonido = document.getElementById('finSonido');
+    finSonido.currentTime = 0; // Reinicia el sonido si se está reproduciendo
+    finSonido.play(); // Reproduce el sonido
+}
+
 // Función para actualizar el contador de días
 function actualizarContador() {
     document.getElementById('contador').textContent = `Días restantes: ${diasRestantes}`;
@@ -27,6 +41,9 @@ function girarRuleta() {
         totalAhorrado += cantidad;
         actualizarTotalAhorrado();
 
+                // Reproducir el sonido de ganar
+        reproducirSonidoGanar();
+
         // Mostrar el resultado con animación de opacidad
         const resultado = document.getElementById('resultado');
         resultado.style.opacity = 0;
@@ -46,6 +63,9 @@ function girarRuleta() {
         document.getElementById('contador').textContent = ''; // Limpiar el contador de días restantes
         document.getElementById('contador').style.display = 'none'; // Ocultar el contador de días restantes
         document.getElementById('totalAhorrado').style.display = 'none'; // Ocultar el contador de total ahorrado
+
+                // Reproducir el sonido de fin
+        reproducirSonidoFin();
 
         // Ocultar el botón de girar y mostrar el botón de reiniciar
         document.getElementById('botonGirar').style.display = 'none'; // Ocultar el botón de girar
